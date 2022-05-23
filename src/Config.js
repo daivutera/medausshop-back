@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   dbConfig: {
     host: process.env.MYSQL_HOST,

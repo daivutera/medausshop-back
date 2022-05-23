@@ -1,0 +1,12 @@
+http://localhost:3000/control
+### 
+post http://localhost:3000/control/add
+Content-Type: application/json
+
+{
+"name": "Medus",
+"quantity_in_stock": 50,
+"price": 10,
+"foto_url": "https://nuotraukosprojektams.fra1.digitaloceanspaces.com/medus%20400g.jpg",
+"quantity_kg": 1
+}
