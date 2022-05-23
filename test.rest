@@ -6,14 +6,22 @@ Content-Type: application/json
 {
 "name": "Medus",
 "quantity_in_stock": 50,
-"price": 10,
+"price": 6,
 "foto_url": "https://nuotraukosprojektams.fra1.digitaloceanspaces.com/medus%20400g.jpg",
-"quantity_kg": 1
+"quantity_kg": 0.3
 }
 ###
-delete http://localhost:3000/control/delete
+DELETE http://localhost:3000/control/delete
 Content-Type: application/json
 
 {
 "product_id":1
+}
+###
+PATCH  http://localhost:3000/control/edit
+Content-Type: application/json
+
+{
+"product_id":3,
+"updatedInfoArr":[{"name":"quantity_in_stock", "value": 20}, {"name":"name", "value": "'Medutis'"}]
 }

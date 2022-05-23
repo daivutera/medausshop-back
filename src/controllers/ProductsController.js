@@ -27,8 +27,9 @@ async function deleteProduct(req, res) {
   SuccessCase(res, data);
 }
 async function editProduct(req, res) {
-  const productId = req.body.productId;
-  const data = await editProductDb(productId);
+  const productId = req.body.product_id;
+  const arrWithUpdatedInfo = req.body.updatedInfoArr;
+  const data = await editProductDb(productId, arrWithUpdatedInfo);
   if (data === false) {
     ErrorCase(res);
     return;

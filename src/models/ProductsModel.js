@@ -30,10 +30,11 @@ async function editProductDb(productId, arrOfFields) {
   try {
     const connection = await mysql.createConnection(dbConfig);
     const sql = `UPDATE products
-    SET ${arrOfFields.map((oneColumn) => {
-      oneColumn.name = oneColumn.value + ',';
-    })} 
+    SET ${arrOfFields.map(
+      (oneColumn) => oneColumn.name + ' = ' + oneColumn.value
+    )} 
     WHERE product_id=?`;
+    console.log(sql, 'sql');
     const [data] = await connection.execute(sql, [productId]);
     await connection.close();
     return data;
