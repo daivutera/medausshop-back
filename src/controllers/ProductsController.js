@@ -18,7 +18,7 @@ async function getProducts(req, res) {
   SuccessCase(res, data);
 }
 async function deleteProduct(req, res) {
-  const productId = req.productId;
+  const productId = req.body.product_id;
   const data = await deleteProductDb(productId);
   if (data === false) {
     ErrorCase(res);
@@ -27,7 +27,7 @@ async function deleteProduct(req, res) {
   SuccessCase(res, data);
 }
 async function editProduct(req, res) {
-  const productId = req.productId;
+  const productId = req.body.productId;
   const data = await editProductDb(productId);
   if (data === false) {
     ErrorCase(res);

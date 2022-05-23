@@ -10,3 +10,10 @@ Content-Type: application/json
 "foto_url": "https://nuotraukosprojektams.fra1.digitaloceanspaces.com/medus%20400g.jpg",
 "quantity_kg": 1
 }
+###
+delete http://localhost:3000/control/delete
+Content-Type: application/json
+
+{
+"product_id":1
+}
