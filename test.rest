@@ -25,3 +25,26 @@ Content-Type: application/json
 "product_id":3,
 "updatedInfoArr":[{"name":"quantity_in_stock", "value": 20}, {"name":"name", "value": "'Medutis'"}]
 }
+###
+DELETE http://localhost:3000/control/orders
+Content-Type: application/json
+
+{
+"id":1
+}
+###
+
+POST http://localhost:3000/control/orders
+Content-Type: application/json
+
+{
+"client_id": 1,
+"amount": 20,
+"product_id":2,
+"product_name":"Medus",
+"send_to":"adresas",
+"email":"email"
+}
+###
+GET http://localhost:3000/control/orders
+
