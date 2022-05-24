@@ -1,4 +1,4 @@
-const { ErrorCase, SuccessCase } = require('../helpers/helpers');
+const { ErrorCase, SuccessCase } = require('../Helpers/helpers');
 const {
   getOrdersDb,
   deleteOrderDb,
