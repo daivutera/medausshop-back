@@ -1,6 +1,6 @@
-http://localhost:8080/control
+http://localhost:8080/products
 ### 
-post http://localhost:8080/control/add
+post http://localhost:8080/products/add
 Content-Type: application/json
 
 {
@@ -11,14 +11,14 @@ Content-Type: application/json
 "quantity_kg": 0.3
 }
 ###
-DELETE http://localhost:8080/control/delete
+DELETE http://localhost:8080/products/delete
 Content-Type: application/json
 
 {
-"product_id":6
+"product_id":7
 }
 ###
-PATCH  http://localhost:8080/control/edit
+PATCH  http://localhost:8080/products/edit
 Content-Type: application/json
 
 {

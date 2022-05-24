@@ -2,9 +2,9 @@ const express = require('express');
 const productsRouter = express.Router();
 const productsController = require('../controllers/productsController');
 
-productsRouter.get('/control', productsController.getProducts);
-productsRouter.post('/control/add', productsController.addProduct);
-productsRouter.patch('/control/edit', productsController.editProduct);
-productsRouter.delete('/control/delete', productsController.deleteProduct);
+productsRouter.get('/products', productsController.getProducts);
+productsRouter.post('/products/add', productsController.addProduct);
+productsRouter.patch('/products/edit', productsController.editProduct);
+productsRouter.delete('/products/delete', productsController.deleteProduct);
 
 module.exports = productsRouter;
