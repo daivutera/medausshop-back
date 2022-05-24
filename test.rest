@@ -15,7 +15,7 @@ DELETE http://localhost:8080/control/delete
 Content-Type: application/json
 
 {
-"product_id":1
+"product_id":6
 }
 ###
 PATCH  http://localhost:8080/control/edit
