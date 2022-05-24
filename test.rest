@@ -1,6 +1,6 @@
-http://localhost:3000/control
+http://localhost:8080/control
 ### 
-post http://localhost:3000/control/add
+post http://localhost:8080/control/add
 Content-Type: application/json
 
 {
@@ -11,14 +11,14 @@ Content-Type: application/json
 "quantity_kg": 0.3
 }
 ###
-DELETE http://localhost:3000/control/delete
+DELETE http://localhost:8080/control/delete
 Content-Type: application/json
 
 {
 "product_id":1
 }
 ###
-PATCH  http://localhost:3000/control/edit
+PATCH  http://localhost:8080/control/edit
 Content-Type: application/json
 
 {
@@ -26,7 +26,7 @@ Content-Type: application/json
 "updatedInfoArr":[{"name":"quantity_in_stock", "value": 20}, {"name":"name", "value": "'Medutis'"}]
 }
 ###
-DELETE http://localhost:3000/control/orders
+DELETE http://localhost:8080/control/orders
 Content-Type: application/json
 
 {
@@ -34,7 +34,7 @@ Content-Type: application/json
 }
 ###
 
-POST http://localhost:3000/control/orders
+POST http://localhost:8080/control/orders
 Content-Type: application/json
 
 {
@@ -46,5 +46,5 @@ Content-Type: application/json
 "email":"email"
 }
 ###
-GET http://localhost:3000/control/orders
+GET http://localhost:8080/control/orders
 
