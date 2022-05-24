@@ -4,7 +4,7 @@ const {
   deleteProductDb,
   editProductDb,
   addProductDb,
-} = require('../models/productsModel');
+} = require('../models/productsModels');
 
 async function getProducts(req, res) {
   const data = await getProductsDb();
