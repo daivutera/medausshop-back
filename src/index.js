@@ -12,8 +12,8 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan('dev'));
 
-app.use('/', productsRouter);
-app.use('/', orderRouter);
+// app.use('/', productsRouter);
+// app.use('/', orderRouter);
 app.all('*', (req, res) => {
   return res.status(404).send({ err: 'Page not found' });
 });
