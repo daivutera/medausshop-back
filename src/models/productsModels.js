@@ -6,7 +6,9 @@ async function getProductsDb() {
   try {
     console.log(dbConfig);
     const connection = await mysql.createConnection(dbConfig);
+    console.log('prisijungiau');
     const sql = `SELECT * FROM products`;
+    console.log(sql);
     const [data] = await connection.query(sql);
     await connection.close();
     return data;
