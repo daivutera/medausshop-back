@@ -4,6 +4,7 @@ require('dotenv').config();
 
 async function getProductsDb() {
   try {
+    console.log(dbConfig);
     const connection = await mysql.createConnection(dbConfig);
     const sql = `SELECT * FROM products`;
     const [data] = await connection.query(sql);
