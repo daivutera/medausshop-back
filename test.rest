@@ -8,7 +8,8 @@ Content-Type: application/json
 "quantity_in_stock": 50,
 "price": 6,
 "foto_url": "https://nuotraukosprojektams.fra1.digitaloceanspaces.com/medus%20400g.jpg",
-"quantity_kg": 0.3
+"quantity_kg": 3,
+"description":"labai geras medus"
 }
 ###
 DELETE http://localhost:8080/products/delete
