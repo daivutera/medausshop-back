@@ -51,17 +51,19 @@ async function addProductDb(
   quantity_in_stock,
   price,
   foto_url,
-  quantity_kg
+  quantity_kg,
+  description
 ) {
   try {
     const connection = await mysql.createConnection(dbConfig);
-    const sql = `INSERT INTO products (name, quantity_in_stock, price, foto_url, quantity_kg) VALUES(?,?,?,?,?)`;
+    const sql = `INSERT INTO products (name, quantity_in_stock, price, foto_url, quantity_kg, description) VALUES(?,?,?,?,?,?)`;
     const [data] = await connection.execute(sql, [
       name,
       quantity_in_stock,
       price,
       foto_url,
       quantity_kg,
+      description,
     ]);
     await connection.close();
     return data;

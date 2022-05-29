@@ -37,13 +37,15 @@ async function editProduct(req, res) {
   SuccessCase(res, data);
 }
 async function addProduct(req, res) {
-  const { name, quantity_in_stock, price, foto_url, quantity_kg } = req.body;
+  const { name, quantity_in_stock, price, foto_url, quantity_kg, description } =
+    req.body;
   const data = await addProductDb(
     name,
     quantity_in_stock,
     price,
     foto_url,
-    quantity_kg
+    quantity_kg,
+    description
   );
   if (data === false) {
     ErrorCase(res);

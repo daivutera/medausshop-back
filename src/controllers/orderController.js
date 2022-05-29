@@ -26,11 +26,19 @@ async function deleteOrder(req, res) {
   SuccessCase(res, data);
 }
 async function addOrder(req, res) {
-  const { client_id, amount, product_id, product_name, send_to, email } =
-    req.body;
-  const data = await addOrderDb(
-    client_id,
+  const {
+    juridinis,
     amount,
+    amount_total_EUR,
+    product_id,
+    product_name,
+    send_to,
+    email,
+  } = req.body;
+  const data = await addOrderDb(
+    juridinis,
+    amount,
+    amount_total_EUR,
     product_id,
     product_name,
     send_to,

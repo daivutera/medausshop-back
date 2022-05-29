@@ -28,8 +28,9 @@ async function deleteOrderDb(orderId) {
 }
 
 async function addOrderDb(
-  client_id,
+  juridinis,
   amount,
+  amount_total_EUR,
   product_id,
   product_name,
   send_to,
@@ -37,15 +38,17 @@ async function addOrderDb(
 ) {
   try {
     const connection = await mysql.createConnection(dbConfig);
-    const sql = `INSERT INTO orders (client_id,
-            amount,
-            product_id,
-            product_name,
-            send_to,
-            email) VALUES(?,?,?,?,?,?)`;
-    const [data] = await connection.execute(sql, [
-      client_id,
+    const sql = `INSERT INTO orders (juridinis,
       amount,
+      amount_total_EUR,
+      product_id,
+      product_name,
+      send_to,
+      email) VALUES(?,?,?,?,?,?,?)`;
+    const [data] = await connection.execute(sql, [
+      juridinis,
+      amount,
+      amount_total_EUR,
       product_id,
       product_name,
       send_to,
