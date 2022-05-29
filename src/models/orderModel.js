@@ -62,8 +62,76 @@ async function addOrderDb(
   }
 }
 
+async function addClientFizinisDb(
+  name,
+  surname,
+  adresas,
+  miestas,
+  el_pastas,
+  tel
+) {
+  try {
+    const connection = await mysql.createConnection(dbConfig);
+    const sql = `INSERT INTO clients ( name,
+      surname,
+      adresas,
+      miestas,
+      el_pastas,
+      tel) VALUES(?,?,?,?,?,?)`;
+    const [data] = await connection.execute(sql, [
+      name,
+      surname,
+      adresas,
+      miestas,
+      el_pastas,
+      tel,
+    ]);
+    await connection.close();
+    return data;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
+}
+
+async function addClientJuridinisDb(
+  imones_kodas,
+  pvm_kodas,
+  imones_pav,
+  adresas,
+  miestas,
+  el_pastas,
+  tel
+) {
+  try {
+    const connection = await mysql.createConnection(dbConfig);
+    const sql = `INSERT INTO business_clients (imones_kodas,
+      pvm_kodas,
+      imones_pav,
+      adresas,
+      miestas,
+      el_pastas,
+      tel) VALUES(?,?,?,?,?,?,?)`;
+    const [data] = await connection.execute(sql, [
+      imones_kodas,
+      pvm_kodas,
+      imones_pav,
+      adresas,
+      miestas,
+      el_pastas,
+      tel,
+    ]);
+    await connection.close();
+    return data;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
+}
 module.exports = {
   getOrdersDb,
   deleteOrderDb,
   addOrderDb,
+  addClientFizinisDb,
+  addClientJuridinisDb,
 };

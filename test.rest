@@ -39,13 +39,41 @@ POST http://localhost:8080/control/orders
 Content-Type: application/json
 
 {
-"client_id": 1,
-"amount": 20,
-"product_id":2,
-"product_name":"Medus",
-"send_to":"adresas",
-"email":"email"
+"juridinis":true,
+  "amount":1,
+  "amount_total_EUR":2,
+  "product_id":"2",
+  "product_name":"medus",
+  "send_to":"namai",
+  "email":"at@at.lt"
 }
 ###
 GET http://localhost:8080/control/orders
+###
 
+POST http://localhost:8080/control/fiziniai
+Content-Type: application/json
+
+{
+"name":"Pranas",
+    "surname":"Masiotas",
+   "adresas":"kaunas",
+    "miestas":"kaunas",
+    "el_pastas":"gai@kai.lt",
+    "tel":56789234
+}
+###
+
+POST http://localhost:8080/control/juridiniai
+Content-Type: application/json
+
+{
+"imones_kodas":4567,
+    "pvm_kodas":4567,
+    "imones_pav":"kaunas",
+   "adresas":"kaunas",
+    "miestas":"kaunas",
+    "el_pastas":"gai@kai.lt",
+    "tel":56789234
+}
+###

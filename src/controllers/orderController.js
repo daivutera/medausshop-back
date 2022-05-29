@@ -3,6 +3,8 @@ const {
   getOrdersDb,
   deleteOrderDb,
   addOrderDb,
+  addClientJuridinisDb,
+  addClientFizinisDb,
 } = require('../models/orderModel');
 
 async function getOrders(req, res) {
@@ -50,5 +52,51 @@ async function addOrder(req, res) {
   }
   SuccessCase(res, data);
 }
-
-module.exports = { getOrders, deleteOrder, addOrder };
+async function addClientFizinis(req, res) {
+  const { name, surname, adresas, miestas, el_pastas, tel } = req.body;
+  const data = await addClientFizinisDb(
+    name,
+    surname,
+    adresas,
+    miestas,
+    el_pastas,
+    tel
+  );
+  if (data === false) {
+    ErrorCase(res);
+    return;
+  }
+  SuccessCase(res, data);
+}
+async function addClientJuridinis(req, res) {
+  const {
+    imones_kodas,
+    pvm_kodas,
+    imones_pav,
+    adresas,
+    miestas,
+    el_pastas,
+    tel,
+  } = req.body;
+  const data = await addClientJuridinisDb(
+    imones_kodas,
+    pvm_kodas,
+    imones_pav,
+    adresas,
+    miestas,
+    el_pastas,
+    tel
+  );
+  if (data === false) {
+    ErrorCase(res);
+    return;
+  }
+  SuccessCase(res, data);
+}
+module.exports = {
+  getOrders,
+  deleteOrder,
+  addOrder,
+  addClientFizinis,
+  addClientJuridinis,
+};
