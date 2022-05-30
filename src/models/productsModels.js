@@ -25,6 +25,7 @@ async function deleteProductDb(productId) {
   }
 }
 async function editProductDb(productId, arrOfFields) {
+  console.log(arrOfFields);
   try {
     const connection = await mysql.createConnection(dbConfig);
     const sql = `UPDATE products
@@ -32,6 +33,7 @@ async function editProductDb(productId, arrOfFields) {
       (oneColumn) => oneColumn.name + ' = ' + oneColumn.value
     )} 
     WHERE product_id=?`;
+    console.log(sql);
     const [data] = await connection.execute(sql, [productId]);
     await connection.close();
     return data;
@@ -61,6 +63,7 @@ async function addProductDb(
     await connection.close();
     return data;
   } catch (error) {
+    console.log(error);
     return false;
   }
 }

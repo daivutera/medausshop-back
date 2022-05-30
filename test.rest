@@ -21,11 +21,10 @@ Content-Type: application/json
 ###
 PATCH  http://localhost:8080/products/edit
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUzOTUxNzIwLCJleHAiOjE2NTM5NTUzMjB9.HetbH8rdAvNVd52ERGDJ_IzjTiH7vAoKZ8Yy2CjuNdw
 
-{
-"product_id":3,
-"updatedInfoArr":[{"name":"quantity_in_stock", "value": 20}, {"name":"name", "value": "'Medutis'"}]
-}
+{"product_id":"16","updatedInfoArr":[{"name":"name","value":"\"Gerulis medus\""},{"name":"quantity_in_stock","value":"4"},{"name":"price","value":"23"},{"name":"foto_url","value":"\"https://nuotraukosprojektams.fra1.digitaloceanspaces.com/medus%20400g.jpg\""},{"name":"quantity_kg","value":"3"},{"name":"description","value":"\"puikus\""}]}
+
 ###
 DELETE http://localhost:8080/control/orders
 Content-Type: application/json
@@ -68,6 +67,7 @@ Content-Type: application/json
 
 POST http://localhost:8080/control/juridiniai
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUzOTUxMTUzLCJleHAiOjE2NTM5NTQ3NTN9.v93lxhFTu40lHh6up2g3gKkrpyn5JUhIQLRfDAFpO8E
 
 {
 "imones_kodas":4567,
@@ -78,13 +78,14 @@ Content-Type: application/json
     "el_pastas":"gai@kai.lt",
     "tel":56789234
 }
+
 ###
 POST http://localhost:8080/login
 Content-Type: application/json
 
 {
   "username":"testas",
-  "password":"testa"
+  "password":"testas"
 }
 ###
 POST https://jellyfish-app-xdnzk.ondigitalocean.app/login
