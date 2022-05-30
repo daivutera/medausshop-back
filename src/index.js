@@ -4,6 +4,7 @@ const morgan = require('morgan');
 require('dotenv').config();
 const productsRouter = require('./routes/productsRoute');
 const orderRouter = require('./routes/orderRoute');
+const authRouter = require('./routes/authRoute');
 const PORT = process.env.PORT || 3001;
 
 const app = express();
@@ -14,6 +15,7 @@ app.use(morgan('dev'));
 
 app.use('/', productsRouter);
 app.use('/', orderRouter);
+app.use('/', authRouter);
 app.all('*', (req, res) => {
   return res.status(404).send({ err: 'Page not found' });
 });

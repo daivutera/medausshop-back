@@ -49,6 +49,8 @@ Content-Type: application/json
 }
 ###
 GET http://localhost:8080/control/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUzOTE0Njk0LCJleHAiOjE2NTM5MTgyOTR9.Fb08dTWdCYFSbusXtJSmRmiO2_U2Mqwy22vCEYeziQ0
 ###
 
 POST http://localhost:8080/control/fiziniai
@@ -77,3 +79,10 @@ Content-Type: application/json
     "tel":56789234
 }
 ###
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "username":"testas",
+  "password":"testas"
+}

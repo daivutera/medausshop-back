@@ -4,16 +4,12 @@ require('dotenv').config();
 
 async function getProductsDb() {
   try {
-    console.log(dbConfig);
     const connection = await mysql.createConnection(dbConfig);
-    console.log('prisijungiau');
     const sql = `SELECT * FROM products`;
-    console.log(sql);
     const [data] = await connection.query(sql);
     await connection.close();
     return data;
   } catch (error) {
-    console.log(error);
     return false;
   }
 }
@@ -25,7 +21,6 @@ async function deleteProductDb(productId) {
     await connection.close();
     return data;
   } catch (error) {
-    console.log(error);
     return false;
   }
 }
@@ -37,12 +32,10 @@ async function editProductDb(productId, arrOfFields) {
       (oneColumn) => oneColumn.name + ' = ' + oneColumn.value
     )} 
     WHERE product_id=?`;
-    console.log(sql, 'sql');
     const [data] = await connection.execute(sql, [productId]);
     await connection.close();
     return data;
   } catch (error) {
-    console.log(error);
     return false;
   }
 }
@@ -68,7 +61,6 @@ async function addProductDb(
     await connection.close();
     return data;
   } catch (error) {
-    console.log(error);
     return false;
   }
 }
