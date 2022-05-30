@@ -84,5 +84,13 @@ Content-Type: application/json
 
 {
   "username":"testas",
-  "password":"testas"
+  "password":"testa"
+}
+###
+POST https://jellyfish-app-xdnzk.ondigitalocean.app/login
+Content-Type: application/json
+
+{
+  "username":"testas",
+  "password":"testa"
 }

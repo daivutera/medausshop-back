@@ -1,0 +1,7 @@
+PORT=yourport
+MYSQL_HOST='yourhost'
+MYSQL_USER='user'
+MYSQL_PASS='yourpass'
+MYSQL_DB='yourdb'
+MYSQL_PORT=yoursqlport
+JWT_SECRET=yoursecret
